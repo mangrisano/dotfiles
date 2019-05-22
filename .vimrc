@@ -1,4 +1,4 @@
-" Michele Angrisano's Vim configuration file.
+" Michele Angrisano's Vim configuration file. 2019
 
 " Enable the syntax
 syntax on 
