@@ -1,3 +1,5 @@
+# Michele Angrisano's Zsh configuration file. 2019
+
 # Path of the shell
 export ZSH="/Users/darksun/.oh-my-zsh"
 
