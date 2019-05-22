@@ -1,3 +1,5 @@
+# Michele Angrisano's Zsh theme. 2019
+
 PROMPT='%{$fg[green]%}%~%{$fg_bold[white]%}$(git_prompt_info)%{$fg_bold[blue]%}% %{$reset_color%}: '
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" [%{$fg[white]%}"
