@@ -7,7 +7,7 @@
     * [NerdTree](https://github.com/scrooloose/nerdtree)
     
 **ZSH**
-  * Plugin installed
+  * Plugins installed
     * [Git](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git)
   
   [Website to download oh-my-zsh](https://ohmyz.sh)
