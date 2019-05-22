@@ -4,7 +4,7 @@
 export ZSH="/Users/darksun/.oh-my-zsh"
 
 # Set the theme
-ZSH_THEME="garyblessington"
+ZSH_THEME="mangrisano"
 
 # Enable the git plugin
 plugins=(git)
