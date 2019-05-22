@@ -39,7 +39,7 @@ set statusline+=%*
 let g:airline_theme='minimalist'
 
 " Set the colorscheme
-colorschem hashpunk-sw-sweet
+colorscheme hashpunk-sw-sweet
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
