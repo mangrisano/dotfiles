@@ -1,7 +1,7 @@
 # Michele Angrisano's Zsh configuration file. 2019
 
 # Path of the shell
-export ZSH="/Users/darksun/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set the theme
 ZSH_THEME="mangrisano"
