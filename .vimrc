@@ -32,7 +32,7 @@ set ruler
 set rnu 
 set mouse=a
 set encoding=utf-8
-set background=light
+set background=dark
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
