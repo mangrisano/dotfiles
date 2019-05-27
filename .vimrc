@@ -52,3 +52,6 @@ inoremap jj <Esc>
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+" Restore the cursor shape when vim is closed
+autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
