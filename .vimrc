@@ -48,9 +48,10 @@ map <C-n> :NERDTreeToggle<CR>
 " Remap the Escape with jj
 inoremap jj <Esc>
 
-" Set the cursor shape: 
-" vertical bar [5] in Insert
-" block [1] in Normal
+" Set the cursor shape:
+" [0] - reset the cursor after closing vim
+" [1] - block in Normal Mode
+" [5] - vertical bar in Insert Mode
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
