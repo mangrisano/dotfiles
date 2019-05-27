@@ -1,12 +1,12 @@
 " Michele Angrisano's Vim configuration file. 2019
 
-" Enable the syntax
-syntax on 
-
 " Enable the indent
 filetype indent plugin on
 
-" Enable the pathogen for plugins
+" Enable the syntax
+syntax on 
+
+" Enable the package management for the plugins
 execute pathogen#infect()
 
 " Set the headers of the program languagages
@@ -21,16 +21,17 @@ augroup Shebang
 augroup END
 
 " Setup of vim
-set tabstop=4
-set shiftwidth=4
 set expandtab       
 set number
 set hlsearch
-set noautoindent
-set textwidth=79
+set cursorline
+set autoindent
 set ruler
-set rnu 
+set relativenumber 
 set mouse=a
+set tabstop=4
+set textwidth=79
+set shiftwidth=4
 set encoding=utf-8
 set background=dark
 set statusline+=%#warningmsg#
@@ -46,3 +47,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Remap the Escape with jj
 inoremap jj <Esc>
+
+" Set the cursor block
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
