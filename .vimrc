@@ -48,10 +48,8 @@ map <C-n> :NERDTreeToggle<CR>
 " Remap the Escape with jj
 inoremap jj <Esc>
 
-" Set the cursor block
-let &t_SI.="\e[5 q" "SI = INSERT mode
-let &t_SR.="\e[4 q" "SR = REPLACE mode
-let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-
-" Restore the cursor shape after closing vim
-autocmd VimLeave * call system('printf "\e[5 q" > $TTY')
+" Set the cursor block: vertical bar in Insert - block in Normal
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
