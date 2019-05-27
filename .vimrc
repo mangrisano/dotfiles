@@ -48,7 +48,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Remap the Escape with jj
 inoremap jj <Esc>
 
-" Set the cursor: vertical bar in Insert - block in Normal
+" Set the cursor shape: 
+" vertical bar [5] in Insert
+" block [1] in Normal
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
