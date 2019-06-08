@@ -25,7 +25,6 @@ augroup END
 
 " Setup of vim
 set expandtab
-set backup
 set number
 set ignorecase
 set smartcase
@@ -35,6 +34,8 @@ set autoindent
 set ruler
 set relativenumber
 set noswapfile
+set nobackup
+set writebackup
 set viminfo=
 set mouse=a
 set tabstop=4
@@ -42,11 +43,12 @@ set textwidth=79
 set shiftwidth=4
 set encoding=utf-8
 set background=dark
-set backupdir=~/.vim/.backup
+set backupdir=/tmp
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_theme='minimalist'
+let skip_defaults_vim=1
 
 " Set the colorscheme
 colorscheme hashpunk-sw-sweet
