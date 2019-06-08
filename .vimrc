@@ -9,6 +9,9 @@ syntax on
 " Enable the package management for the plugins
 execute pathogen#infect()
 
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
+
 " Set the headers of the program languagages
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
@@ -63,6 +66,3 @@ let &t_te.="\e[0 q"
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
 call matchadd('ColorColumn', '\%79v', 100)
-
-" Remove trailing spaces on save
-autocmd BufWritePre * :%s/\s\+$//e
