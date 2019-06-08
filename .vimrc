@@ -36,8 +36,8 @@ set relativenumber
 set noswapfile
 set nobackup
 set nowritebackup
-set viminfo=
 set mouse=a
+set viminfo=
 set tabstop=4
 set textwidth=79
 set shiftwidth=4
