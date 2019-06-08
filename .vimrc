@@ -21,19 +21,22 @@ augroup Shebang
 augroup END
 
 " Setup of vim
-set expandtab       
+set expandtab
+set backup
 set number
 set hlsearch
 set cursorline
 set autoindent
 set ruler
-set relativenumber 
+set relativenumber
+set noswapfile
 set mouse=a
 set tabstop=4
 set textwidth=79
 set shiftwidth=4
 set encoding=utf-8
 set background=dark
+set backupdir=~/.vim/.backup
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -60,3 +63,6 @@ let &t_te.="\e[0 q"
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
 call matchadd('ColorColumn', '\%79v', 100)
+
+" Remove trailing spaces on save
+autocmd BufWritePre * :%s/\s\+$//e
