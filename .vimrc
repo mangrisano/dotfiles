@@ -35,6 +35,7 @@ set autoindent
 set ruler
 set relativenumber
 set noswapfile
+set viminfo=
 set mouse=a
 set tabstop=4
 set textwidth=79
