@@ -35,14 +35,13 @@ set ruler
 set relativenumber
 set noswapfile
 set nobackup
-set writebackup
+set nowritebackup
 set viminfo=
 set mouse=a
 set tabstop=4
 set textwidth=79
 set shiftwidth=4
 set encoding=utf-8
-set backupdir=/tmp
 set background=dark
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
