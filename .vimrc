@@ -27,6 +27,8 @@ augroup END
 set expandtab
 set backup
 set number
+set ignorecase
+set smartcase
 set hlsearch
 set cursorline
 set autoindent
