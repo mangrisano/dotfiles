@@ -37,7 +37,6 @@ set noswapfile
 set nobackup
 set nowritebackup
 set mouse=a
-set viminfo=
 set tabstop=4
 set textwidth=79
 set shiftwidth=4
@@ -47,7 +46,6 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_theme='minimalist'
-let skip_defaults_vim=1
 
 " Set the colorscheme
 colorscheme hashpunk-sw-sweet
@@ -70,3 +68,8 @@ let &t_te.="\e[0 q"
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
 call matchadd('ColorColumn', '\%79v', 100)
+
+" Jump to the last position when reopening a file
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
