@@ -1,3 +1,5 @@
+# dotfiles
+
 **VIM**
   * Plugins installed
     * [vim-pathogen](https://github.com/tpope/vim-pathogen)
