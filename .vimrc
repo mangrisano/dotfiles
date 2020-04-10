@@ -4,7 +4,7 @@
 filetype indent plugin on
 
 " Enable the syntax
-syntax on 
+syntax on
 
 " Enable the package management for the plugins
 execute pathogen#infect()
@@ -39,19 +39,24 @@ set nowritebackup
 set mouse=a
 set tabstop=4
 set textwidth=79
+set softtabstop=4
 set shiftwidth=4
 set encoding=utf-8
 set background=dark
+set backspace=2
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_theme='minimalist'
 
 " Set the colorscheme
-colorscheme hashpunk-sw-sweet
+" gruvbox colorscheme: https://github.com/morhetz/gruvbox
+colorschem gruvbox
+hi Normal ctermbg=16 guibg=#000000
+hi LineNr ctermbg=16 guibg=#000000
 
 " Open NerdTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-t> :NERDTreeToggle<CR>
 
 " Remap the Escape with jj
 inoremap jj <Esc>
@@ -64,6 +69,8 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:gruvbox_contrast_dark="hard"
 
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
@@ -73,3 +80,10 @@ call matchadd('ColorColumn', '\%79v', 100)
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+nnoremap <C-j> :tabprevious<CR>
+n
+oremap <C-k> :tabnext<CR>
