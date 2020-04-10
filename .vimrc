@@ -1,4 +1,4 @@
-" Michele Angrisano's Vim configuration file. 2019
+" Michele Angrisano's Vim configuration file. 2020
 
 " Enable the indent
 filetype indent plugin on
@@ -85,5 +85,4 @@ endif
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-j> :tabprevious<CR>
-n
-oremap <C-k> :tabnext<CR>
+noremap <C-k> :tabnext<CR>
