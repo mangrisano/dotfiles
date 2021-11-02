@@ -6,6 +6,7 @@
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
     * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+    * [tagbar](https://github.com/preservim/tagbar)
     * [NerdTree](https://github.com/scrooloose/nerdtree)
     
 **ZSH**
