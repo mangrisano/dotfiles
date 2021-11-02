@@ -1,4 +1,4 @@
-" Michele Angrisano's Vim configuration file. 2020
+" Michele Angrisano's Vim configuration file. 2021
 
 " Enable the indent
 filetype indent plugin on
@@ -26,9 +26,12 @@ augroup END
 " Setup of vim
 set expandtab
 set number
+set wildmenu
 set ignorecase
 set smartcase
 set hlsearch
+set noerrorbells
+set visualbell
 set cursorline
 set autoindent
 set ruler
@@ -36,8 +39,11 @@ set relativenumber
 set noswapfile
 set nobackup
 set nowritebackup
+set nowrap
+set display+=lastline
 set mouse=a
 set tabstop=4
+set updatetime=500
 set textwidth=79
 set softtabstop=4
 set shiftwidth=4
@@ -56,7 +62,11 @@ hi Normal ctermbg=16 guibg=#000000
 hi LineNr ctermbg=16 guibg=#000000
 
 " Open NerdTree
-map <C-t> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+" Open TagBarToggle
+map <C-t> :TagbarToggle<CR>
+
 
 " Remap the Escape with jj
 inoremap jj <Esc>
@@ -71,6 +81,8 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:gruvbox_contrast_dark="hard"
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
 
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
@@ -81,8 +93,12 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 nnoremap <C-j> :tabprevious<CR>
 noremap <C-k> :tabnext<CR>
+
+au FileType mail let b:delimitMate_autoclose = 0
+
+set rtp+=~/.vim/bundle/tabnine-vim
+
