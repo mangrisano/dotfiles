@@ -2,12 +2,13 @@
 
 **VIM**
   * Plugins installed
-    * [vim-pathogen](https://github.com/tpope/vim-pathogen)
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
     * [vim-fugitive](https://github.com/tpope/vim-fugitive)
-    * [tagbar](https://github.com/preservim/tagbar)
+    * [vim-pathogen](https://github.com/tpope/vim-pathogen)
     * [NerdTree](https://github.com/scrooloose/nerdtree)
+    * [tagbar](https://github.com/preservim/tagbar)
+    * [YouCompleteMe](https://github.com/tabnine/YouCompleteMe)
     
 **ZSH**
   * Plugins installed
