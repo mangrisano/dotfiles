@@ -4,7 +4,9 @@
   * Plugins installed
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+    * [autopairs](https://github.com/jiangmiao/auto-pairs)
     * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+    * [gruvbox](https://github.com/morhetz/gruvbox)
     * [vim-pathogen](https://github.com/tpope/vim-pathogen)
     * [NerdTree](https://github.com/scrooloose/nerdtree)
     * [tagbar](https://github.com/preservim/tagbar)
