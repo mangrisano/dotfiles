@@ -101,4 +101,5 @@ noremap <C-k> :tabnext<CR>
 au FileType mail let b:delimitMate_autoclose = 0
 
 set rtp+=~/.vim/bundle/tabnine-vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
