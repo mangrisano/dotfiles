@@ -24,10 +24,16 @@ alias irssi="screen -S irssi irssi"
 
 # Setup of the global variables
 export EDITOR=vim
+
+# Green directory
 export LSCOLORS=Cxfxcxdxbxegedabagacad
+
+# Default terminal color scheme
+export LSCOLORS=xxfxcxdxbxegedabagacad
 export PATH="/usr/local/opt/python@3.10/bin:$PATH"
 
 alias python="/usr/local/opt/python@3.10/bin/python3.10"
+
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
