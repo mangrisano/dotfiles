@@ -3,6 +3,7 @@
 **VIM**
   * Plugins installed
     * [autopairs](https://github.com/jiangmiao/auto-pairs)
+    * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
     * [vim-fugitive](https://github.com/tpope/vim-fugitive)
     * [gruvbox](https://github.com/morhetz/gruvbox)
     * [vim-pathogen](https://github.com/tpope/vim-pathogen)
