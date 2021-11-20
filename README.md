@@ -16,6 +16,6 @@
 **ZSH**
   * Plugins installed
     * [Git](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git)
-    * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
   
   [Website to download oh-my-zsh](https://ohmyz.sh)
