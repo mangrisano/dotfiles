@@ -1,5 +1,9 @@
 # dotfiles
 
+**TMUX**
+  * Scripts installed
+    * [network-bandwidth](https://github.com/xamut/tmux-network-bandwidth)
+ 
 **VIM**
   * Plugins installed
     * [autopairs](https://github.com/jiangmiao/auto-pairs)
