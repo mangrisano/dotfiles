@@ -4,7 +4,7 @@
   * Scripts installed
     * [battery](https://github.com/jldeen/bad-ass-terminal/blob/master/bin/battery.sh)
     * [network-bandwidth](https://github.com/xamut/tmux-network-bandwidth)
-    * [now-playing](https://github.com/jldeen/bad-ass-terminal/blob/master/bin/now_playing.sh)
+    * [now-playing](https://gugsrs.github.io/tmux-spotify-mac/)
  
 **VIM**
   * Plugins installed
