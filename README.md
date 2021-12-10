@@ -20,11 +20,12 @@
     * [YouCompleteMe](https://github.com/tabnine/YouCompleteMe)
     
 **ZSH**
+
+  * [Download oh-my-zsh](https://ohmyz.sh)
+  * [Plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
+  
   * Plugins installed
     * [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)
     * [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
     * [web-search](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/web-search/web-search.plugin.zsh)
-  
-  [Website to download oh-my-zsh](https://ohmyz.sh)
-  [Plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
