@@ -21,7 +21,10 @@
     
 **ZSH**
   * Plugins installed
-    * [Git](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/git)
-    * [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)
+    * [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
+    * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * [web-search](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/web-search/web-search.plugin.zsh)
   
   [Website to download oh-my-zsh](https://ohmyz.sh)
+  [Plugins](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins)
