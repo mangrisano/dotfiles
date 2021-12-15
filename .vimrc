@@ -12,6 +12,9 @@ execute pathogen#infect()
 " Remove trailing spaces on save
 autocmd BufWritePre * :%s/\s\+$//e
 
+" Path for browsing
+set path+=**
+
 " Set the headers of the program languagages
 augroup Shebang
   autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
@@ -67,7 +70,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Open TagBarToggle
 map <C-t> :TagbarToggle<CR>
 
-
 " Remap the Escape with jj
 inoremap jj <Esc>
 
@@ -79,10 +81,9 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
-let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_autoclose_preview_window_after_completion = 1
 let g:gruvbox_contrast_dark="hard"
 let g:ackprg = 'ag --nogroup --nocolor --column'
-
 
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
