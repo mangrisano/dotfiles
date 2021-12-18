@@ -17,6 +17,7 @@
     * [tagbar](https://github.com/preservim/tagbar)
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+    * [vim-devicons](https://github.com/ryanoasis/vim-devicons) 
     * [YouCompleteMe](https://github.com/tabnine/YouCompleteMe)
     
 **ZSH**
