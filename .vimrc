@@ -57,6 +57,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_theme='minimalist'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Set the colorscheme
 " gruvbox colorscheme: https://github.com/morhetz/gruvbox
@@ -103,4 +107,3 @@ au FileType mail let b:delimitMate_autoclose = 0
 
 set rtp+=~/.vim/bundle/tabnine-vim
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
