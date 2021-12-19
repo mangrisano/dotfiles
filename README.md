@@ -14,6 +14,7 @@
     * [gruvbox](https://github.com/morhetz/gruvbox)
     * [vim-pathogen](https://github.com/tpope/vim-pathogen)
     * [NerdTree](https://github.com/scrooloose/nerdtree)
+    * [syntastic](https://github.com/vim-syntastic/syntastic)
     * [tagbar](https://github.com/preservim/tagbar)
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
