@@ -53,20 +53,35 @@ set shiftwidth=4
 set encoding=utf-8
 set background=dark
 set backspace=2
+
+" Statusline
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:airline_theme='minimalist'
+
+" Syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" Change leader for NerdCommenter
+let mapleader = ","
+
+" NerdCommenter
+let g:NERDToggleCheckAllLines = 1
+let g:NERDCommentEmptyLines = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCompactSexyComs = 1
+let g:NERDCreateDefaultMappings = 1
+let g:NERDAltDelims_java = 1
 
 " Set the colorscheme
 " gruvbox colorscheme: https://github.com/morhetz/gruvbox
 colorschem gruvbox
 hi Normal ctermbg=16 guibg=#000000
 hi LineNr ctermbg=16 guibg=#000000
+let g:gruvbox_contrast_dark="hard"
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -86,7 +101,6 @@ let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:gruvbox_contrast_dark="hard"
 let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Set the colorcolumn to see a limit when coding in Python
