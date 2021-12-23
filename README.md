@@ -10,15 +10,17 @@
   * Plugins installed
     * [autopairs](https://github.com/jiangmiao/auto-pairs)
     * [ctrlp](https://github.com/ctrlpvim/ctrlp.vim)
-    * [vim-fugitive](https://github.com/tpope/vim-fugitive)
     * [gruvbox](https://github.com/morhetz/gruvbox)
-    * [vim-pathogen](https://github.com/tpope/vim-pathogen)
+    * [indentLine](https://github.com/Yggdroot/indentLine)
+    * [NerdCommenter](https://github.com/preservim/nerdcommenter)
     * [NerdTree](https://github.com/scrooloose/nerdtree)
     * [syntastic](https://github.com/vim-syntastic/syntastic)
     * [tagbar](https://github.com/preservim/tagbar)
     * [vim-airline](https://github.com/vim-airline/vim-airline)
     * [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
-    * [vim-devicons](https://github.com/ryanoasis/vim-devicons) 
+    * [vim-devicons](https://github.com/ryanoasis/vim-devicons)
+    * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+    * [vim-pathogen](https://github.com/tpope/vim-pathogen)
     * [YouCompleteMe](https://github.com/tabnine/YouCompleteMe)
     
 **ZSH**
