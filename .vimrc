@@ -100,8 +100,9 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+" YCM Settings
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ackprg = 'ag --nogroup --nocolor --column'
 
 " Set the colorcolumn to see a limit when coding in Python
 highlight ColorColumn ctermbg=198
@@ -119,5 +120,9 @@ noremap <C-k> :tabnext<CR>
 
 au FileType mail let b:delimitMate_autoclose = 0
 
+" Tabnine Settings
 set rtp+=~/.vim/bundle/tabnine-vim
+
+" CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = 'ra'
