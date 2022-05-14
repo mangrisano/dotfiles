@@ -79,7 +79,7 @@ let g:NERDAltDelims_java = 1
 
 " Set the colorscheme
 " Solarized theme: https://github.com/altercation/vim-colors-solarized
-colorschem solarized
+colorscheme solarized
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
