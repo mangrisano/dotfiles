@@ -44,6 +44,7 @@ set nobackup
 set nowritebackup
 set nowrap
 set display+=lastline
+set guifont=Iosevka
 set mouse=a
 set tabstop=4
 set updatetime=500
@@ -77,11 +78,8 @@ let g:NERDCreateDefaultMappings = 1
 let g:NERDAltDelims_java = 1
 
 " Set the colorscheme
-" gruvbox colorscheme: https://github.com/morhetz/gruvbox
-colorschem gruvbox
-hi Normal ctermbg=16 guibg=#000000
-hi LineNr ctermbg=16 guibg=#000000
-let g:gruvbox_contrast_dark="hard"
+" Solarized theme: https://github.com/altercation/vim-colors-solarized
+colorschem solarized
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
