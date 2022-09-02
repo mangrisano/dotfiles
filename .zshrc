@@ -1,4 +1,11 @@
-# Michele Angrisano's Zsh configuration file. 2019
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# Michele Angrisano's Zsh configuration file. 2022
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -6,16 +13,19 @@ ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set the theme
-ZSH_THEME="mangrisano"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Enable the git plugin
-plugins=(git)
+plugins=(
+         git
+         copyfile
+         web-search
+        )
 
 # Load the script in the current shell
 source $ZSH/oh-my-zsh.sh
 
 # Alias
-alias batt="pmset -g batt | awk '/InternalBattery/ { print \$5, \$6 }'"
 alias tmux="tmux attach"
 alias updatebrew="brew update && brew upgrade"
 alias uni="~/Library/Mobile\ Documents/com~apple~CloudDocs/Università"
@@ -25,15 +35,5 @@ alias irssi="screen -S irssi irssi"
 # Setup of the global variables
 export EDITOR=vim
 
-# Green directory
-export LSCOLORS=Cxfxcxdxbxegedabagacad
-
-# Default terminal color scheme
-export LSCOLORS=xxfxcxdxbxegedabagacad
-export PATH="/usr/local/opt/python@3.10/bin:$PATH"
-
-alias python="/usr/local/opt/python@3.10/bin/python3.10"
-
-
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
