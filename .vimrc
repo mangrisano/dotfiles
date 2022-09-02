@@ -84,9 +84,6 @@ colorscheme solarized
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
 
-" Open TagBarToggle
-map <C-t> :TagbarToggle<CR>
-
 " Remap the Escape with jj
 inoremap jj <Esc>
 
@@ -117,9 +114,6 @@ nnoremap <C-j> :tabprevious<CR>
 noremap <C-k> :tabnext<CR>
 
 au FileType mail let b:delimitMate_autoclose = 0
-
-" Tabnine Settings
-set rtp+=~/.vim/bundle/tabnine-vim
 
 " CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
