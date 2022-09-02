@@ -114,7 +114,3 @@ nnoremap <C-j> :tabprevious<CR>
 noremap <C-k> :tabnext<CR>
 
 au FileType mail let b:delimitMate_autoclose = 0
-
-" CtrlP
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-let g:ctrlp_working_path_mode = 'ra'
