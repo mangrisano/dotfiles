@@ -32,4 +32,5 @@
     * [copyfile](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/copyfile)
     * [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)
     * [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+    * [sudo](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/sudo)
     * [web-search](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/web-search/web-search.plugin.zsh)
