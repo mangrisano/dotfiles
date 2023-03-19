@@ -1,4 +1,4 @@
-" Michele Angrisano's Vim configuration file. 2021
+" Michele Angrisano's Vim configuration file. 2023
 
 " Enable the indent
 filetype indent plugin on
@@ -14,17 +14,6 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " Path for browsing
 set path+=**
-
-" Set the headers of the program languagages
-augroup Shebang
-  autocmd BufNewFile *.py 0put =\"#!/usr/bin/env python\<nl># -*- coding: utf-8 -*-\<nl>\"|$
-  autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
-  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
-  autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
-  autocmd BufNewFile *.c 0put =\"#include <stdio.h>\<nl>#include <stdlib.h>\<nl>#include <string.h>\<nl>#include <unistd.h>\"|$
-  autocmd BufNewFile *cpp 0put =\"#include <iostream>\<nl>\"|$
-  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
-augroup END
 
 " Setup of vim
 set expandtab
@@ -48,7 +37,6 @@ set guifont=Iosevka
 set mouse=a
 set tabstop=4
 set updatetime=500
-set textwidth=79
 set softtabstop=4
 set shiftwidth=4
 set encoding=utf-8
@@ -78,8 +66,8 @@ let g:NERDCreateDefaultMappings = 1
 let g:NERDAltDelims_java = 1
 
 " Set the colorscheme
-" Solarized theme: https://github.com/altercation/vim-colors-solarized
-colorscheme solarized
+packadd! dracula
+colorscheme dracula
 
 " Open NerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -99,14 +87,25 @@ let &t_te.="\e[0 q"
 " YCM Settings
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-" Set the colorcolumn to see a limit when coding in Python
-highlight ColorColumn ctermbg=198
-call matchadd('ColorColumn', '\%79v', 100)
-
 " Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+" Set the headers of the program languagages
+augroup shebang
+  autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+  autocmd BufNewFile *.rb 0put =\"#!/usr/bin/env ruby\<nl># -*- coding: None -*-\<nl>\"|$
+  autocmd BufNewFile *.tex 0put =\"%&plain\<nl>\"|$
+  autocmd BufNewFile *.c 0put =\"#include <stdio.h>\<nl>#include <stdlib.h>\<nl>#include <string.h>\<nl>#include <unistd.h>\"|$
+  autocmd BufNewFile *cpp 0put =\"#include <iostream>\<nl>\"|$
+  autocmd BufNewFile *.\(cc\|hh\) 0put =\"//\<nl>// \".expand(\"<afile>:t\").\" -- \<nl>//\<nl>\"|2|start!
+augroup end
+
+augroup python
+    autocmd FileType python set colorcolumn=79
+    highlight ColorColumn ctermbg=198
+augroup end
 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
