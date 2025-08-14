@@ -13,6 +13,80 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+  -- GitHub Copilot
+  {
+    "github/copilot.vim",
+    config = function()
+      -- Keybinding per mettere i diagnostics nella quickfix list
+      vim.keymap.set('n', ',tq', function()
+        vim.diagnostic.setqflist()
+        vim.cmd('copen')
+      end, { desc = "Diagnostics in quickfix list" })
+      -- Puoi aggiungere qui eventuali opzioni personalizzate
+
+        -- Keybinding per mostrare tutte le shortcut personalizzate
+        vim.keymap.set('n', ',ks', function()
+          local shortcuts = {
+            { key = ',tq', desc = 'Diagnostics in quickfix list' },
+            { key = '<C-e>', desc = 'Toggle NeoTree' },
+            { key = '<C-p>', desc = 'Find files (Telescope)' },
+            { key = ',fg', desc = 'Live grep (Telescope)' },
+            { key = ',fb', desc = 'Find buffers (Telescope)' },
+            { key = ',fs', desc = 'Find document symbols (Telescope)' },
+            { key = ',fS', desc = 'Find workspace symbols (Telescope)' },
+            { key = ',fr', desc = 'Find references (Telescope)' },
+            { key = ',xx', desc = 'Toggle diagnostics (Trouble)' },
+            { key = ',xd', desc = 'Document diagnostics (Trouble)' },
+            { key = ',xq', desc = 'Quickfix (Trouble)' },
+            { key = ',xl', desc = 'Location list (Trouble)' },
+            { key = 'gR', desc = 'LSP references (Trouble)' },
+            { key = '<F8>', desc = 'Toggle diagnostics panel (Trouble)' },
+            { key = ',tv', desc = 'Toggle virtual text inline' },
+            { key = ',e', desc = 'Show diagnostic' },
+            { key = '[d', desc = 'Previous diagnostic' },
+            { key = ']d', desc = 'Next diagnostic' },
+            { key = ',q', desc = 'Diagnostic quickfix' },
+            { key = ',8', desc = 'Mostra tutti i diagnostici in una finestra' },
+            { key = 'gd', desc = 'Vai alla definizione (LSP)' },
+            { key = 'gD', desc = 'Vai alla dichiarazione (LSP)' },
+            { key = 'gi', desc = 'Vai all\'implementazione (LSP)' },
+            { key = 'K', desc = 'Hover (LSP)' },
+            { key = '<C-k>', desc = 'Signature help (LSP)' },
+            { key = ',wa', desc = 'Aggiungi workspace folder (LSP)' },
+            { key = ',wr', desc = 'Rimuovi workspace folder (LSP)' },
+            { key = ',wl', desc = 'Lista workspace folder (LSP)' },
+            { key = ',D', desc = 'Vai al type definition (LSP)' },
+            { key = ',rn', desc = 'Rename (LSP)' },
+            { key = ',ca', desc = 'Code action (LSP)' },
+            { key = 'gr', desc = 'References (LSP)' },
+            { key = ',f', desc = 'Formatta buffer (LSP)' },
+          }
+          local lines = { 'Shortcut         Descrizione', '---------------- ------------------------------' }
+          for _, s in ipairs(shortcuts) do
+            table.insert(lines, string.format('%-15s %s', s.key, s.desc))
+          end
+          local buf = vim.api.nvim_create_buf(false, true)
+          vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+          local win_height = math.min(25, #lines + 2)
+          local win_width = 50
+          local row = math.floor((vim.o.lines - win_height) / 2)
+          local col = math.floor((vim.o.columns - win_width) / 2)
+          vim.api.nvim_open_win(buf, true, {
+            relative = 'editor',
+            width = win_width,
+            height = win_height,
+            row = row,
+            col = col,
+            style = 'minimal',
+            border = 'rounded',
+            title = ' 📋 Shortcut personalizzate ',
+            title_pos = 'center',
+          })
+          vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = buf, silent = true })
+          vim.keymap.set('n', '<Esc>', '<cmd>close<cr>', { buffer = buf, silent = true })
+        end, { desc = 'Elenca tutte le shortcut personalizzate' })
+    end
+  },
   -- Neo-tree file explorer con devicons pastel
   {
     "nvim-neo-tree/neo-tree.nvim",
