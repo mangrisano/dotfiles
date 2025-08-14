@@ -23,6 +23,15 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
     },
     config = function()
+      -- Chiudi la quickfix list automaticamente quando si entra in un nuovo buffer
+      vim.api.nvim_create_autocmd("BufEnter", {
+        callback = function()
+          local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
+          if buftype ~= 'quickfix' then
+            vim.cmd('cclose')
+          end
+        end,
+      })
       require("neo-tree").setup({
         filesystem = {
           filtered_items = {
@@ -447,8 +456,10 @@ require("lazy").setup({
               end
             end
             vim.lsp.buf.definition()
-            -- Chiudi la Quickfix List se è aperta
-            vim.cmd('cclose')
+            -- Chiudi la Quickfix List se è aperta (subito dopo il salto)
+            vim.defer_fn(function()
+              vim.cmd('cclose')
+            end, 50)
           end, opts)
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
           vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
