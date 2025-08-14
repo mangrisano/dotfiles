@@ -17,14 +17,14 @@ require("lazy").setup({
   {
     "github/copilot.vim",
     config = function()
-      -- Keybinding per mettere i diagnostics nella quickfix list
+  -- Keybinding to put diagnostics in the quickfix list
       vim.keymap.set('n', ',tq', function()
         vim.diagnostic.setqflist()
         vim.cmd('copen')
       end, { desc = "Diagnostics in quickfix list" })
-      -- Puoi aggiungere qui eventuali opzioni personalizzate
+  -- You can add custom options here
 
-        -- Keybinding per mostrare tutte le shortcut personalizzate
+  -- Keybinding to show all custom shortcuts
         vim.keymap.set('n', ',ks', function()
           local shortcuts = {
             { key = ',tq', desc = 'Diagnostics in quickfix list' },
@@ -46,22 +46,22 @@ require("lazy").setup({
             { key = '[d', desc = 'Previous diagnostic' },
             { key = ']d', desc = 'Next diagnostic' },
             { key = ',q', desc = 'Diagnostic quickfix' },
-            { key = ',8', desc = 'Mostra tutti i diagnostici in una finestra' },
-            { key = 'gd', desc = 'Vai alla definizione (LSP)' },
-            { key = 'gD', desc = 'Vai alla dichiarazione (LSP)' },
-            { key = 'gi', desc = 'Vai all\'implementazione (LSP)' },
+            { key = ',8', desc = 'Show all diagnostics in a window' },
+            { key = 'gd', desc = 'Go to definition (LSP)' },
+            { key = 'gD', desc = 'Go to declaration (LSP)' },
+            { key = 'gi', desc = 'Go to implementation (LSP)' },
             { key = 'K', desc = 'Hover (LSP)' },
             { key = '<C-k>', desc = 'Signature help (LSP)' },
-            { key = ',wa', desc = 'Aggiungi workspace folder (LSP)' },
-            { key = ',wr', desc = 'Rimuovi workspace folder (LSP)' },
-            { key = ',wl', desc = 'Lista workspace folder (LSP)' },
-            { key = ',D', desc = 'Vai al type definition (LSP)' },
+            { key = ',wa', desc = 'Add workspace folder (LSP)' },
+            { key = ',wr', desc = 'Remove workspace folder (LSP)' },
+            { key = ',wl', desc = 'List workspace folders (LSP)' },
+            { key = ',D', desc = 'Go to type definition (LSP)' },
             { key = ',rn', desc = 'Rename (LSP)' },
             { key = ',ca', desc = 'Code action (LSP)' },
             { key = 'gr', desc = 'References (LSP)' },
             { key = ',f', desc = 'Formatta buffer (LSP)' },
           }
-          local lines = { 'Shortcut         Descrizione', '---------------- ------------------------------' }
+          local lines = { 'Shortcut         Description', '---------------- ------------------------------' }
           for _, s in ipairs(shortcuts) do
             table.insert(lines, string.format('%-15s %s', s.key, s.desc))
           end
@@ -79,15 +79,15 @@ require("lazy").setup({
             col = col,
             style = 'minimal',
             border = 'rounded',
-            title = ' 📋 Shortcut personalizzate ',
+            title = ' 📋 Custom Shortcuts ',
             title_pos = 'center',
           })
           vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = buf, silent = true })
           vim.keymap.set('n', '<Esc>', '<cmd>close<cr>', { buffer = buf, silent = true })
-        end, { desc = 'Elenca tutte le shortcut personalizzate' })
+  end, { desc = 'List all custom shortcuts' })
     end
   },
-  -- Neo-tree file explorer con devicons pastel
+  -- Neo-tree file explorer with pastel devicons
   {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
@@ -97,7 +97,7 @@ require("lazy").setup({
       "MunifTanjim/nui.nvim",
     },
     config = function()
-      -- Chiudi la quickfix list automaticamente quando si entra in un nuovo buffer
+  -- Automatically close the quickfix list when entering a new buffer
       vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
           local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
@@ -134,7 +134,7 @@ require("lazy").setup({
     end
   },
 
-  -- Telescope per ricerca file (sostituisce fzf)
+  -- Telescope for file search (replaces fzf)
   {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
@@ -143,19 +143,19 @@ require("lazy").setup({
           defaults = {
             file_ignore_patterns = { "node_modules", ".git/" },
             hidden = false,
-            -- Forza l'uso dei colori cterm nelle preview
+            -- Force cterm colors in previews
             winblend = 0,
             color_devicons = false,
             preview = {
-              treesitter = false, -- disabilita treesitter nella preview
+              treesitter = false, -- disable treesitter in preview
             },
           },
-          -- Forza highlight cterm per la preview
+          -- Force cterm highlight for preview
           highlight = {
             Normal = { ctermfg = 7, ctermbg = 0 },
             TelescopePreviewNormal = { ctermfg = 7, ctermbg = 0 },
           },
-          -- Chiudi Trouble ogni volta che si entra in un nuovo buffer
+          -- Close Trouble every time you enter a new buffer
           vim.api.nvim_create_autocmd("BufEnter", {
             callback = function()
               local ok, trouble = pcall(require, "trouble")
@@ -164,12 +164,12 @@ require("lazy").setup({
           })
         })
 
-      -- Ctrl-p per aprire file finder
+  -- Ctrl-p to open file finder
       vim.keymap.set('n', '<C-p>', function()
         require('telescope.builtin').find_files()
       end, { desc = "Find files" })
 
-      -- Altri keybinding utili
+  -- Other useful keybindings
       vim.keymap.set('n', ',fg', function()
         require('telescope.builtin').live_grep()
       end, { desc = "Live grep" })
@@ -178,7 +178,7 @@ require("lazy").setup({
         require('telescope.builtin').buffers()
       end, { desc = "Find buffers" })
 
-      -- Simboli e riferimenti
+  -- Symbols and references
       vim.keymap.set('n', ',fs', function()
         require('telescope.builtin').lsp_document_symbols()
       end, { desc = "Find document symbols" })
@@ -201,13 +201,13 @@ require("lazy").setup({
       "williamboman/mason-lspconfig.nvim",
     },
     config = function()
-      -- Chiudi la Quickfix List ogni volta che selezioni una voce
+  -- Close the Quickfix List every time you select an entry
       vim.api.nvim_create_autocmd("QuickFixCmdPost", {
         callback = function()
           vim.cmd('cclose')
         end,
       })
-      -- Chiudi la Quickfix List quando entri in un buffer che non è quickfix
+  -- Close the Quickfix List when entering a buffer that is not quickfix
       vim.api.nvim_create_autocmd("BufEnter", {
         callback = function()
           local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
@@ -216,7 +216,7 @@ require("lazy").setup({
           end
         end,
       })
-      -- Chiudi la Quickfix List quando entri in una finestra che non è quickfix
+  -- Close the Quickfix List when entering a window that is not quickfix
       vim.api.nvim_create_autocmd("WinEnter", {
         callback = function()
           local buftype = vim.api.nvim_buf_get_option(0, 'buftype')
@@ -225,7 +225,7 @@ require("lazy").setup({
           end
         end,
       })
-      -- ...qui puoi reinserire tutta la tua configurazione LSP...
+  -- ...here you can reinsert all your LSP configuration...
     end
   },
 
@@ -246,7 +246,7 @@ require("lazy").setup({
     end
   },
 
-  -- Autocompletamento
+  -- Autocompletion
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -293,7 +293,7 @@ require("lazy").setup({
     end
   },
 
-  -- Treesitter per syntax highlighting avanzato (TEMPORANEAMENTE DISABILITATO PER DESERT)
+  -- Treesitter for advanced syntax highlighting (TEMPORARILY DISABLED FOR DESERT)
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -302,8 +302,8 @@ require("lazy").setup({
         ensure_installed = { "python", "javascript", "typescript", "lua", "vim", "json" },
         auto_install = true,
         highlight = {
-          enable = false, -- DISABILITATO per evitare conflitti con tema desert
-          additional_vim_regex_highlighting = true, -- Usa highlighting tradizionale
+          enable = false, -- DISABLED to avoid conflicts with desert theme
+          additional_vim_regex_highlighting = true, -- Use traditional highlighting
         },
         indent = {
           enable = true
@@ -312,7 +312,7 @@ require("lazy").setup({
     end
   },
 
-  -- Trouble per diagnostica e riferimenti
+  -- Trouble for diagnostics and references
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -363,14 +363,14 @@ require("lazy").setup({
         use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
       })
 
-      -- Keybindings per trouble - più intuitivi per vedere errori
+  -- Keybindings for trouble - more intuitive to see errors
       vim.keymap.set("n", ",xx", function() require("trouble").toggle("workspace_diagnostics") end, { desc = "Toggle diagnostics" })
       vim.keymap.set("n", ",xd", function() require("trouble").toggle("document_diagnostics") end, { desc = "Document diagnostics" })
       vim.keymap.set("n", ",xq", function() require("trouble").toggle("quickfix") end, { desc = "Quickfix" })
       vim.keymap.set("n", ",xl", function() require("trouble").toggle("loclist") end, { desc = "Location list" })
       vim.keymap.set("n", "gR", function() require("trouble").toggle("lsp_references") end, { desc = "LSP references" })
 
-      -- Shortcut veloce per aprire/chiudere diagnostici
+  -- Quick shortcut to open/close diagnostics
       vim.keymap.set("n", "<F8>", function() require("trouble").toggle("workspace_diagnostics") end, { desc = "Toggle diagnostics panel" })
     end
   },
@@ -379,10 +379,10 @@ require("lazy").setup({
   {
     "neovim/nvim-lspconfig",
     config = function()
-        -- Stato del toggle per i virtual text
+  -- Toggle state for virtual text
         local virtual_text_enabled = false
 
-        -- Funzione per applicare la configurazione dei diagnostici
+  -- Function to apply diagnostic configuration
         local function apply_diagnostic_config()
           vim.diagnostic.config({
             virtual_text = virtual_text_enabled,
@@ -399,21 +399,21 @@ require("lazy").setup({
           })
         end
 
-        -- Applica la configurazione iniziale (virtual_text disabilitato)
+  -- Apply initial configuration (virtual_text disabled)
         vim.api.nvim_create_autocmd('VimEnter', {
           callback = function()
             virtual_text_enabled = false
             apply_diagnostic_config()
           end,
         })
-          -- Chiudi la Quickfix List ogni volta che selezioni una voce
+          -- Close the Quickfix List every time you select an entry
           vim.api.nvim_create_autocmd("QuickFixCmdPost", {
             callback = function()
               vim.cmd('cclose')
             end,
           })
 
-      -- Keybinding per il toggle
+  -- Keybinding for toggle
       vim.keymap.set("n", ",tv", function()
         virtual_text_enabled = not virtual_text_enabled
         apply_diagnostic_config()
@@ -427,7 +427,7 @@ require("lazy").setup({
       local lspconfig = require('lspconfig')
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-      -- Configurazione LSP servers
+  -- LSP servers configuration
       lspconfig.pyright.setup({
         capabilities = capabilities,
         settings = {
@@ -455,17 +455,17 @@ require("lazy").setup({
         },
       })
 
-      -- Keybindings per diagnostici
+  -- Keybindings for diagnostics
       vim.keymap.set('n', ',e', vim.diagnostic.open_float, { desc = "Show diagnostic" })
       vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })
       vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = "Next diagnostic" })
       vim.keymap.set('n', ',q', vim.diagnostic.setloclist, { desc = "Diagnostic quickfix" })
 
-      -- Finestra popup con tutti gli errori
+  -- Popup window with all errors
       vim.keymap.set("n", ",8", function()
         local diagnostics = vim.diagnostic.get(0) -- 0 = buffer corrente
         if #diagnostics == 0 then
-          print("✅ Nessun errore in questo file!")
+          print("✅ No errors in this file!")
           return
         end
 
@@ -484,11 +484,11 @@ require("lazy").setup({
           table.insert(lines, "") -- Spazio tra gli errori
         end
 
-        -- Mostra in popup
+  -- Show in popup
         local buf = vim.api.nvim_create_buf(false, true)
         vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
 
-        -- CORREZIONE: Calcola dimensioni e posizione per centrare la finestra
+  -- FIX: Calculate size and position to center the window
         local win_height = math.min(25, #lines + 2)
         local win_width = math.min(100, vim.o.columns - 4)
         local row = math.floor((vim.o.lines - win_height) / 2)
@@ -502,26 +502,26 @@ require("lazy").setup({
           col = col,
           style = 'minimal',
           border = 'rounded',
-          title = " 🚨 Diagnostici del file (" .. #diagnostics .. ") ",
+          title = " 🚨 File Diagnostics (" .. #diagnostics .. ") ",
           title_pos = 'center',
         })
 
-        -- Esci con 'q' o Esc
+  -- Exit with 'q' or Esc
         vim.keymap.set('n', 'q', '<cmd>close<cr>', { buffer = buf, silent = true })
         vim.keymap.set('n', '<Esc>', '<cmd>close<cr>', { buffer = buf, silent = true })
-      end, { desc = "Mostra tutti i diagnostici in una finestra (,8)" })
+  end, { desc = "Show all diagnostics in a window (,8)" })
 
-      -- Keybindings LSP
+  -- LSP Keybindings
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
         callback = function(ev)
-          -- Applica di nuovo la config all'attach per sicurezza
+          -- Reapply config on attach for safety
           apply_diagnostic_config()
 
           local opts = { buffer = ev.buf }
           vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
           vim.keymap.set('n', 'gd', function()
-            -- Chiudi tutte le finestre Trouble
+            -- Close all Trouble windows
             for _, win in ipairs(vim.api.nvim_list_wins()) do
               local buf = vim.api.nvim_win_get_buf(win)
               local name = vim.api.nvim_buf_get_name(buf)
@@ -530,7 +530,7 @@ require("lazy").setup({
               end
             end
             vim.lsp.buf.definition()
-            -- Chiudi la Quickfix List se è aperta (subito dopo il salto)
+            -- Close the Quickfix List if open (right after jump)
             vim.defer_fn(function()
               vim.cmd('cclose')
             end, 50)
@@ -555,31 +555,31 @@ require("lazy").setup({
     end
   },
 
-  -- FORZA TEMA DESERT - configurazione prioritaria
+  -- FORCE DESERT THEME - priority configuration
   {
     "desert-theme-force",
     dir = vim.fn.stdpath("config"),
-    priority = 1000, -- Massima priorità
+  priority = 1000, -- Highest priority
     config = function()
-      -- Forza disabilitazione true colors
+  -- Force disable true colors
       vim.opt.termguicolors = false
 
-      -- Applica il tema desert
+  -- Apply desert theme
       vim.cmd("colorscheme desert")
 
-      -- Autocmd per riapplicare desert se viene cambiato
+  -- Autocmd to reapply desert if changed
       vim.api.nvim_create_autocmd({"VimEnter", "ColorScheme"}, {
         pattern = "*",
         callback = function()
           if vim.g.colors_name ~= "desert" then
             vim.cmd("colorscheme desert")
           end
-          -- Assicurati che termguicolors rimanga disabilitato
+          -- Make sure termguicolors stays disabled
           vim.opt.termguicolors = false
         end,
       })
 
-      print("🏜️ Tema DESERT forzato!")
+  print("🏜️ DESERT theme forced!")
     end
   }
 })
