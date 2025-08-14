@@ -1,0 +1,48 @@
+# Ghostty configuration for Neovim desert theme compatibility
+
+# Terminal type
+term = xterm-256color
+
+# Font configuration
+font-family = "JetBrains Mono"
+font-size = 14
+
+# Desert theme color palette - exact colors from traditional desert colorscheme
+# Background and foreground
+background = 332b2b
+foreground = ffffff
+
+# Standard colors (0-7)
+palette = 0=#000000
+palette = 1=#cd5c5c
+palette = 2=#98fb98  
+palette = 3=#f0e68c
+palette = 4=#87ceeb
+palette = 5=#dda0dd
+palette = 6=#87ceeb
+palette = 7=#faebd7
+
+# Bright colors (8-15) 
+palette = 8=#7f7f7f
+palette = 9=#ff0000
+palette = 10=#00ff00
+palette = 11=#ffff00
+palette = 12=#0000ff
+palette = 13=#ff00ff
+palette = 14=#00ffff
+palette = 15=#ffffff
+
+# Additional desert-specific colors
+palette = 16=#cd853f
+palette = 17=#f5deb3
+palette = 18=#808080
+palette = 19=#a0522d
+
+# Window settings (con barra del titolo per spostare la finestra)
+window-decoration = true
+cursor-style = block
+cursor-color = #ffffff
+
+# Shell integration settings
+shell-integration = zsh
+shell-integration-features = no-cursor,no-sudo,no-title
