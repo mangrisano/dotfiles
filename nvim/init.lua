@@ -22,7 +22,7 @@ vim.opt.updatetime = 500
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.laststatus = 2
-vim.opt.termguicolors = false
+vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 vim.opt.background = "dark"
 
@@ -56,6 +56,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- Colorscheme
 vim.cmd('colorscheme desert')
+-- Evidenziazione Visual Mode: giallo compatibile con GUI e terminale
+-- Evidenziazione Visual Mode: blu pastello neutro, uniforme con il tema
+vim.api.nvim_set_hl(0, 'Visual', { bg = '#E3F2FD', ctermbg = 195 })
 
 -- Load plugins and LSP
 require("plugins")
@@ -89,7 +92,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter', 'BufRead', 'BufNewFile' }, {
 })
 
 -- Custom statusline colors (from .vimrc lines 213-217)
-vim.api.nvim_set_hl(0, 'Visual', { bg = '#5f5f5f' })
+-- Rimuovo override Visual Mode
 vim.api.nvim_set_hl(0, 'StatuslineRed', { fg = 'red', bg = 'NONE' })
 vim.api.nvim_set_hl(0, 'StatuslinePastelRed', { fg = '#FFB3B3', bg = 'NONE', ctermfg = 217, ctermbg = 0 })
 vim.api.nvim_set_hl(0, 'StatuslinePastelBlue', { fg = '#E3F2FD', bg = 'NONE', ctermfg = 195, ctermbg = 0 })
@@ -158,5 +161,8 @@ vim.cmd('highlight StatusLineNC ctermfg=8 ctermbg=0')
 vim.cmd('highlight User5 ctermfg=15 ctermbg=0')
 vim.cmd('highlight User1 ctermfg=217 ctermbg=0') -- rosso pastello (unix)
 vim.cmd('highlight User2 ctermfg=215 ctermbg=0') -- arancione pastello ([python])
-vim.cmd('highlight User4 ctermfg=87 ctermbg=0')  -- ciano pastello (path)
--- Configurazione colori compatibile con Neovim
+
+
+
+vim.api.nvim_set_hl(0, 'Visual', { bg = '#5f5f5f', ctermbg = 59 })
+
