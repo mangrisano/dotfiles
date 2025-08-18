@@ -13,6 +13,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Fugitive for Git Integration
+  {
+    'tpope/vim-fugitive',
+    cmd = { 'Git', 'Gdiffsplit', 'Gread', 'Gwrite', 'Ggrep', 'GMove', 'GDelete', 'GBrowse' },
+    vim.keymap.set('n', '<leader>gs', ':Git<CR>', { desc = 'Git status' }),
+    vim.keymap.set('n', '<leader>gds', ':Gdiffsplit<CR>', { desc = 'Git diff split' }),
+    vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', { desc = 'Git blame' }),
+    vim.keymap.set('n', '<leader>gl', ':Git log --oneline<CR>', { desc = 'Git log' }),
+  },
   -- GitHub Copilot
   {
     "github/copilot.vim",
@@ -27,19 +36,6 @@ require("lazy").setup({
   -- Keybinding to show all custom shortcuts
         vim.keymap.set('n', ',ks', function()
           local shortcuts = {
-            { key = ',tq', desc = 'Diagnostics in quickfix list' },
-            { key = '<C-e>', desc = 'Toggle NeoTree' },
-            { key = '<C-p>', desc = 'Find files (Telescope)' },
-            { key = ',fg', desc = 'Live grep (Telescope)' },
-            { key = ',fb', desc = 'Find buffers (Telescope)' },
-            { key = ',fs', desc = 'Find document symbols (Telescope)' },
-            { key = ',fS', desc = 'Find workspace symbols (Telescope)' },
-            { key = ',fr', desc = 'Find references (Telescope)' },
-            { key = ',xx', desc = 'Toggle diagnostics (Trouble)' },
-            { key = ',xd', desc = 'Document diagnostics (Trouble)' },
-            { key = ',xq', desc = 'Quickfix (Trouble)' },
-            { key = ',xl', desc = 'Location list (Trouble)' },
-            { key = 'gR', desc = 'LSP references (Trouble)' },
             { key = '<F8>', desc = 'Toggle diagnostics panel (Trouble)' },
             { key = ',tv', desc = 'Toggle virtual text inline' },
             { key = ',e', desc = 'Show diagnostic' },
@@ -47,6 +43,23 @@ require("lazy").setup({
             { key = ']d', desc = 'Next diagnostic' },
             { key = ',q', desc = 'Diagnostic quickfix' },
             { key = ',8', desc = 'Show all diagnostics in a window' },
+            { key = ',tq', desc = 'Diagnostics in quickfix list' },
+            { key = ',xx', desc = 'Toggle diagnostics (Trouble)' },
+            { key = ',xq', desc = 'Quickfix (Trouble)' },
+            { key = ',xd', desc = 'Document diagnostics (Trouble)' },
+            { key = ',gs', desc = 'Git Status' },
+            { key = ',gds', desc = 'Git Diff Blame' },
+            { key = ',gb', desc = 'Git Blame' },
+            { key = ',gl', desc = 'Git Log' },
+            { key = '<C-e>', desc = 'Toggle NeoTree' },
+            { key = '<C-p>', desc = 'Find files (Telescope)' },
+            { key = ',fg', desc = 'Live grep (Telescope)' },
+            { key = ',fb', desc = 'Find buffers (Telescope)' },
+            { key = ',fs', desc = 'Find document symbols (Telescope)' },
+            { key = ',fS', desc = 'Find workspace symbols (Telescope)' },
+            { key = ',fr', desc = 'Find references (Telescope)' },
+            { key = ',xl', desc = 'Location list (Trouble)' },
+            { key = 'gR', desc = 'LSP references (Trouble)' },
             { key = 'gd', desc = 'Go to definition (LSP)' },
             { key = 'gD', desc = 'Go to declaration (LSP)' },
             { key = 'gi', desc = 'Go to implementation (LSP)' },
@@ -583,4 +596,3 @@ require("lazy").setup({
     end
   }
 })
-
