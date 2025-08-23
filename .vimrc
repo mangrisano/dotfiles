@@ -1,4 +1,4 @@
-" Michele Angrisano's Vim configuration file. 2023
+" Michele Angrisano's Vim configuration file. 2025
 vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
@@ -148,4 +148,5 @@ highlight StatuslineRed ctermfg=red guifg=red ctermbg=NONE guibg=NONE
 highlight StatuslinePastelRed guifg=#FFB3B3 guibg=NONE ctermfg=LightRed ctermbg=NONE
 highlight StatuslinePastelBlue guifg=#D0E4FF ctermfg=153 ctermbg=NONE guibg=NONE
 highlight StatuslinePastelOrange guifg=#FFB580 ctermfg=215 ctermbg=NONE guibg=NONE
+
 
