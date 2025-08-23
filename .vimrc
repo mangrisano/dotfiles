@@ -1,5 +1,4 @@
 " Michele Angrisano's Vim configuration file. 2025
-vnoremap <A-k> :m '<-2<CR>gv=gv
 
 
 " Enable the indent
@@ -17,8 +16,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 set path+=**
 set termguicolors
 
-
 " Setup of vim
+
 set expandtab
 set number
 set noshowmode
